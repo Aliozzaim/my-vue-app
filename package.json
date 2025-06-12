@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "dependencies": {
     "vue": "^3.5.13"
