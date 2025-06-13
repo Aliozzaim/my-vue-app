@@ -12,6 +12,22 @@ const count = ref(0)
   <h1>{{ msg }}</h1>
 
   <div class="card">
+    <span>
+      <img
+        src="/vite.svg"
+        class="logo"
+        alt="Vite logo"
+        width="100"
+        height="100"
+      />
+      <img
+        src="/vue.svg"
+        class="logo vue"
+        alt="Vue logo"
+        width="100"
+        height="100"
+      />
+    </span>
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
