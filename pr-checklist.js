@@ -1,13 +1,14 @@
-const { execSync } = require("child_process");
-module.exports = [
+import { execSync } from "child_process";
+
+const checklist = [
   {
     description: "Code follows the project's style guidelines",
     validate: async () => {
       try {
-        execSync("npx eslint .", { stdio: "pipe" });
+        execSync("npx eslint .", { stdio: "inherit" }); // inherit to see output in console
         return true;
       } catch (error) {
-        console.error("ESLint errors found");
+        console.error("🧹 ESLint failed with details:\n", error.message);
         return false;
       }
     },
@@ -16,13 +17,14 @@ module.exports = [
     description: "Changes have been tested locally",
     validate: async () => {
       try {
-        execSync("npm test", { stdio: "pipe" });
+        execSync("npm test", { stdio: "inherit" });
         return true;
       } catch (error) {
-        console.error("Tests failed");
+        console.error("🧪 Tests failed with details:\n", error.message);
         return false;
       }
     },
   },
-  // Add more items with their respective validation functions
 ];
+
+export default checklist;
