@@ -1,11 +1,4 @@
 #!/bin/sh
-node ./validate-pr-checklist.js
-# Run PR checklist validation
-node validate-pr-checklist.js
-# Run Copilot review
-code - extensionDevelopmentPath=$PWD/.vscode/extensions - folder-uri=$PWD - disable-extensions - user-data-dir=$PWD/.vscode-test/user-data - new-window - wait - command "workbench.action.tasks.runTask" "Copilot: Review Changes"
-# If the Copilot review task exits with a non-zero status, abort the commit
-if [ $? -ne 0 ]; then
- echo "Copilot review failed. Aborting commit."
- exit 1
-fi
+. "$(dirname "$0")/_/husky.sh"
+
+node scripts/precommit-gpt.js

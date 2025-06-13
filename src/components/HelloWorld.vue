@@ -12,22 +12,6 @@ const count = ref(0)
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <span>
-      <img
-        src="/vite.svg"
-        class="logo"
-        alt="Vite logo"
-        width="100"
-        height="100"
-      />
-      <img
-        src="/vue.svg"
-        class="logo vue"
-        alt="Vue logo"
-        width="100"
-        height="100"
-      />
-    </span>
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
@@ -36,18 +20,20 @@ const count = ref(0)
   </div>
   <p>
        my name is ali thus fgo wlrcome to my world
-       
+       <button type="button" @click="count++">count is {{ count }}</button>
        <div>
         clink here to sere my other projects
        </div>
     </p>
   <p>
+    <button type="button" @click="count++">count is {{ count }}</button>
     Check out
     <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
       >create-vue</a
     >, the official Vue + Vite starter
   </p>
   <p>
+    <button type="button" @click="count++">count is {{ count }}</button>
     Learn more about IDE Support for Vue in the
     <a
       href="https://vuejs.org/guide/scaling-up/tooling.html#ide-support"
